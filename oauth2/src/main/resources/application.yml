@@ -1,0 +1,31 @@
+server:
+  port: 8090
+spring:
+  application:
+    name: oauth2
+  datasource:
+    url: jdbc:mysql://47.106.146.227:3306/oauth2?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowMultiQueries=true&serverTimezone=Asia/Shanghai&keepAlive=true
+    username: root
+    password: 123456
+    hikari:
+      connection-timeout: 60000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+      maximum-pool-size: 9
+#security:
+#  oauth2:
+#    client:
+#      client-id: demo-client
+#      client-secret: demo-secret
+#      user-authorization-uri: http://localhost:8090/oauth/authorize
+#      access-token-uri: http://localhost:8090/oauth/token
+#    resource:
+#      jwt:
+#        key-uri: http://localhost:8090/oauth/token_key
+#        key-value: demo
+#    authorization:
+#      check-token-access: http://localhost:8080/oauth/check_token
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true #开启自动驼峰命名
+  mapper-locations: classpath*:mapper/**/*Mapper.xml
